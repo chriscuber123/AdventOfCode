@@ -1,11 +1,12 @@
-def sol1_1(s):
+def part1(s):
     n = s.splitlines()
     count = 0
     for i in range(1, len(n)):
         if int(n[i]) > int(n[i-1]):
             count += 1
     return count
-def sol1_2(s):
+
+def part2(s):
     n = s.splitlines()
     count = 0
     sums = []
@@ -15,7 +16,8 @@ def sol1_2(s):
         if sums[i] > sums[i-1]:
             count += 1
     return count
-i1 = '''118
+
+i = '''118
 121
 123
 125
@@ -2015,5 +2017,6 @@ i1 = '''118
 7951
 7967
 7963'''
-print(sol1_1(i1))
-print(sol1_2(i1))
+
+print(part1(i))
+print(part2(i))

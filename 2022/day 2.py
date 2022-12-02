@@ -1,4 +1,4 @@
-def sol2_1(s):
+def part1(s):
     score = 0
     for line in s.splitlines():
         if line == 'A X':
@@ -21,7 +21,7 @@ def sol2_1(s):
             score += 6
     return score
 
-def sol2_2(s):
+def part2(s):
     score = 0
     for line in s.splitlines():
         if line == 'A X':
@@ -44,7 +44,7 @@ def sol2_2(s):
             score += 7
     return score
 
-i2 = '''A Z
+i = '''A Z
 A Z
 C Y
 A X
@@ -2545,5 +2545,5 @@ B Z
 C Y
 B Z'''
 
-print(sol2_1(i2))
-print(sol2_2(i2))
+print(part1(i))
+print(part2(i))
