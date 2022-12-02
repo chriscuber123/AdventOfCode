@@ -1,4 +1,4 @@
 # AdventOfCode2022
-Advent of Code 2022 Solutions
+Advent of Code 2022 solutions
 
 master.py contains all solutions
