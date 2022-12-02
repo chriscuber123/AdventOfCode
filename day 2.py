@@ -20,6 +20,7 @@ def sol2_1(s):
         elif line == 'C Z':
             score += 6
     return score
+
 def sol2_2(s):
     score = 0
     for line in s.splitlines():
@@ -42,6 +43,7 @@ def sol2_2(s):
         elif line == 'C Z':
             score += 7
     return score
+
 i2 = '''A Z
 A Z
 C Y
@@ -2542,5 +2544,6 @@ B Z
 B Z
 C Y
 B Z'''
+
 print(sol2_1(i2))
 print(sol2_2(i2))

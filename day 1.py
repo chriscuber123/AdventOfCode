@@ -6,6 +6,7 @@ def sol1_1(s):
         else:
             res[-1] += int(line)
     return max(res)
+
 def sol1_2(s):
     res = [0]
     for line in s.splitlines():
@@ -15,6 +16,7 @@ def sol1_2(s):
             res[-1] += int(line)
     res.sort()
     return res[-1]+res[-2]+res[-3]
+
 i1 = '''5686
 2211
 1513
@@ -2270,5 +2272,6 @@ i1 = '''5686
 1791
 1510
 5279'''
+
 print(sol1_1(i1))
 print(sol1_2(i1))
