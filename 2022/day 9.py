@@ -3,7 +3,7 @@ def part1(s):
     visited = [(0,0)]
     for line in s.splitlines():
         dir, num = line.split(' ')[0], line.split(' ')[1]
-        for i in range(int(num)):
+        for _ in range(int(num)):
             if dir == 'U':
                 knots[0] = (knots[0][0], knots[0][1]+1)
             elif dir == 'D':
@@ -21,7 +21,7 @@ def part2(s):
     visited = [(0,0)]
     for line in s.splitlines():
         dir, num = line.split(' ')[0], line.split(' ')[1]
-        for i in range(int(num)):
+        for _ in range(int(num)):
             if dir == 'U':
                 knots[0] = (knots[0][0], knots[0][1]+1)
             elif dir == 'D':
@@ -37,42 +37,12 @@ def part2(s):
 def updatePos(knots):
     for i in range(1, len(knots)):
         head, tail = knots[i-1], knots[i]
-        if head[0] - tail[0] == 2:
-            if head[1] - tail[1] == -1:
-                knots[i] = (knots[i][0]+1, knots[i][1]-1)
-            elif head[1] - tail[1] == 0:
-                knots[i] = (knots[i][0]+1, knots[i][1])
-            elif head[1] - tail[1] == 1:
-                knots[i] = (knots[i][0]+1, knots[i][1]+1)
-            elif head[1] - tail[1] == 2:
-                knots[i] = (knots[i][0]+1, knots[i][1]+1)
-            elif head[1] - tail[1] == -2:
-                knots[i] = (knots[i][0]+1, knots[i][1]-1)
-        elif head[0] - tail[0] == -2:
-            if head[1] - tail[1] == -1:
-                knots[i] = (knots[i][0]-1, knots[i][1]-1)
-            elif head[1] - tail[1] == 0:
-                knots[i] = (knots[i][0]-1, knots[i][1])
-            elif head[1] - tail[1] == 1:
-                knots[i] = (knots[i][0]-1, knots[i][1]+1)
-            elif head[1] - tail[1] == 2:
-                knots[i] = (knots[i][0]-1, knots[i][1]+1)
-            elif head[1] - tail[1] == -2:
-                knots[i] = (knots[i][0]-1, knots[i][1]-1)
-        elif head[1] - tail[1] == 2:
-            if head[0] - tail[0] == -1:
-                knots[i] = (knots[i][0]-1, knots[i][1]+1)
-            elif head[0] - tail[0] == 0:
-                knots[i] = (knots[i][0], knots[i][1]+1)
-            elif head[0] - tail[0] == 1:
-                knots[i] = (knots[i][0]+1, knots[i][1]+1)
-        elif head[1] - tail[1] == -2:
-            if head[0] - tail[0] == -1:
-                knots[i] = (knots[i][0]-1, knots[i][1]-1)
-            elif head[0] - tail[0] == 0:
-                knots[i] = (knots[i][0], knots[i][1]-1)
-            elif head[0] - tail[0] == 1:
-                knots[i] = (knots[i][0]+1, knots[i][1]-1)
+        dx, dy = head[0] - tail[0], head[1] - tail[1]
+        if abs(dx) == 2 or abs(dy) == 2:
+            knots[i] = (knots[i][0]+f(dx), knots[i][1]+f(dy))
+
+def f(n):
+    return n//2 if abs(n) == 2 else n
 
 i = '''U 1
 D 1
