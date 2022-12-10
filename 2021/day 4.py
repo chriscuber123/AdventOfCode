@@ -64,7 +64,6 @@ def part2(s):
                                  (boards[0][0][3][1] and boards[0][1][3][1] and boards[0][2][3][1] and boards[0][3][3][1] and boards[0][4][3][1]) or 
                                  (boards[0][4][0][1] and boards[0][4][1][1] and boards[0][4][2][1] and boards[0][4][3][1] and boards[0][4][4][1]) or 
                                  (boards[0][0][4][1] and boards[0][1][4][1] and boards[0][2][4][1] and boards[0][3][4][1] and boards[0][4][4][1])):
-            print(n, boards[0])
             return n * sumUnmarked(boards[0])
         else:
             b = 0
